@@ -1,6 +1,6 @@
 var noble = require('noble');
 
-var addressToTrack = '606405b98a72';
+var addressToTrack = '3d4e982e7871458692371e8aedf3b7da';
 
 noble.on('stateChange', function (state) {
     if (state === 'poweredOn')
@@ -15,8 +15,13 @@ noble.on('discover', function (peripheral) {
         var rss = peripheral.rssi;
         var txPower = peripheral.advertisement.txPowerLevel;
         var localName = peripheral.advertisement.localName;
-        var distance = calculateDistance(rss);     
-        console.log('found device: ', macAddress, ' ', localName, ' ', rss, ' ', distance, ' ', txPower);        
+        var distance = calculateDistance(rss);    
+        var serviceData =  peripheral.advertisement.serviceData;
+        console.log('found device: ', macAddress, ' ', localName, ' ', rss, ' ', distance, ' ', txPower, ' ', serviceData); 
+        if(serviceData.length > 0){   
+            console.log('  Service Data      = ' + (serviceData[0].data.readUInt16LE(1) / 100) / 2);
+        }
+          
     }
 });
 

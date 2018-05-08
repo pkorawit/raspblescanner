@@ -1,0 +1,25 @@
+{
+  "lockfileVersion": 1,
+  "name": "raspblescanner",
+  "version": "1.0.0",
+  "main": "blecon.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pkorawit/raspblescanner.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pkorawit/raspblescanner/issues"
+  },
+  "homepage": "https://github.com/pkorawit/raspblescanner#readme",
+  "description": "",
+  "dependencies": {
+    "hrv-time-domain-analysis": "^1.0.0",
+    "noble": "^1.9.1"
+  }
+}
